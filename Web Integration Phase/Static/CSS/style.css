@@ -1,0 +1,325 @@
+/* ================= ROOT ================= */
+
+:root {
+  --bg: #ffffff;
+  --text: #111;
+  --sub: #666;
+  --accent: #0071e3;
+  --glass: rgba(255, 255, 255, 0.6);
+  --border: rgba(0, 0, 0, 0.08);
+}
+
+body.dark {
+  --bg: #000;
+  --text: #f5f5f7;
+  --sub: #aaa;
+  --glass: rgba(20, 20, 20, 0.6);
+  --border: rgba(255, 255, 255, 0.08);
+}
+
+
+/* ================= GLOBAL ================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s;
+  overflow-x: hidden;
+}
+
+
+/* ================= LOADER ================= */
+
+#loader {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+}
+
+.loader-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 4px solid #ccc;
+  border-top: 4px solid var(--accent);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* ================= PROGRESS BAR ================= */
+
+#progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: var(--accent);
+  z-index: 5000;
+}
+
+
+/* ================= NAVBAR ================= */
+
+#header {
+  position: fixed;
+  width: 100%;
+  padding: 18px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  z-index: 2000;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+}
+
+
+/* ================= DARK MODE TOGGLE ================= */
+
+.toggle {
+  position: fixed;
+  right: 30px;
+  top: 20px;
+  cursor: pointer;
+  z-index: 4000;
+}
+
+
+/* ================= HERO ================= */
+
+#hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: 0 10%;
+}
+
+/* particles canvas */
+
+#particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+#hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+#hero h2 {
+  color: var(--sub);
+  max-width: 900px;
+}
+
+.btn {
+  margin-top: 30px;
+  padding: 14px 40px;
+  border-radius: 40px;
+  background: var(--text);
+  color: var(--bg);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+
+/* ================= GLASS CARD ================= */
+
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 40px;
+}
+
+
+/* ================= SECTION REVEAL ================= */
+
+section {
+  padding: 120px 10%;
+  opacity: 0;
+  transform: translateY(80px);
+  transition: 1s;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ================= ABOUT ================= */
+
+.about-flex {
+  display: flex;
+  gap: 60px;
+  margin-top: 50px;
+}
+
+.about-flex img {
+  width: 80%;
+  max-width: 600px;
+  display: block;
+  margin: auto;
+}
+
+
+/* ================= HISTORY LAYOUT ================= */
+
+.history-flex {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  margin-top: 60px;
+}
+
+.history-text {
+  flex: 1;
+}
+
+.history-img {
+  flex: 1;
+}
+
+.history-img img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ================= VISUAL GRID ================= */
+
+.visual-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.visual-grid img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+/* ================= CONCLUSION ================= */ 
+.conclusion-wrapper{display:flex;flex-direction:column;gap:80px}
+
+.conclusion-row{
+display:flex;align-items:stretch;gap:60px;
+}
+
+.conclusion-row.reverse{flex-direction:row-reverse}
+
+.conclusion-img{flex:45%;display:flex}
+
+.conclusion-img img{
+width:100%;
+border-radius:20px;
+object-fit:cover;
+box-shadow:0 20px 50px rgba(0,0,0,.15);
+}
+/* glass card content */ 
+.glass{ 
+    flex:0 0 45%; 
+    padding:40px; 
+    border-radius:20px; 
+    background:var(--glass); 
+    backdrop-filter:blur(20px);
+     border:1px solid var(--border); 
+     box-shadow:0 20px 40px rgba(0,0,0,0.08); 
+} 
+/* ================= ANIMATED TICKS ================= */ 
+.tick{ 
+    display:flex; 
+    align-items:center; 
+    margin-bottom:15px; 
+    font-size:1.05rem; 
+    color:var(--sub); 
+} 
+.tick span{ 
+    width:24px; 
+    height:24px; 
+    border-radius:50%; 
+    background:var(--accent); 
+    color:white; 
+    display:flex; 
+    justify-content:center; 
+    align-items:center; 
+    margin-right:12px; 
+    animation:pop .5s ease; 
+} 
+/* tick animation */ 
+@keyframes pop{ 
+    from{transform:scale(0)} to{transform:scale(1)} 
+} 
+/* ================= MOBILE RESPONSIVE ================= */ 
+@media(max-width:900px){ 
+    /* stack sections vertically */ 
+    .about-flex, .conclusion-row,
+    .conclusion-row.reverse
+    { flex-direction:column; }
+     /* full width on mobile */ 
+     .conclusion-img, .glass{ flex:100%; } 
+     /* single column grid */ 
+     .visual-grid{ grid-template-columns:1fr; } 
+     .about-container{ flex-direction:column; } 
+     /* smaller spacing */ 
+     .conclusion-wrapper{ gap:50px; } 
+} 
+/* ================= FOOTER ================= */ 
+ footer{ 
+    padding:60px 10%; text-align:center; 
+        border-top:1px solid var(--border); 
+    }

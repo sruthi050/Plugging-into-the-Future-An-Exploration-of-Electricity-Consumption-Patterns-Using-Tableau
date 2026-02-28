@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Electricity Consumption Analysis</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<!-- LOADER -->
+<div id="loader"><div class="loader-circle"></div></div>
+<div id="progress"></div>
+
+<!-- NAVBAR -->
+<header id="header">
+<nav class="navbar">
+<h3>⚡ Electricity Consumption</h3>
+
+<ul>
+<li><a href="#hero">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#dashboard">Dashboard</a></li>
+<li><a href="#story">Story</a></li>
+<li><a href="#visualization">Visualization</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+</nav>
+</header>
+
+<div class="toggle" onclick="toggleTheme()">🌙</div>
+
+<!-- HERO -->
+<section id="hero">
+<canvas id="particles"></canvas>
+
+<h1>Analysis on Electricity Consumption in India</h1>
+<h2>India is the third largest producer of electricity in the world.</h2>
+<a href="#about" class="btn">Get Started</a>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<div class="glass">
+
+<h2>Electricity Distribution Process</h2>
+
+<div class="about-flex">
+<div>
+<img src="{{ url_for('static', filename='Images/power-flow.png') }}">
+<p>This diagram shows how electricity flows from power plants to homes through transmission lines, substations, and transformers.</p>
+</div>
+</div>
+<br>
+<!-- HISTORY SECTION -->
+<div class="history-flex">
+
+<div class="history-text">
+<h2>History</h2>
+<br>
+<p>
+India began using grid management on a regional basis in the 1960s.
+Individual State grids were interconnected to enable transmission of
+surplus electricity between states in each region.
+</p>
+
+<p>
+The first interconnection of regional grids was established in October 1991
+when the North Eastern and Eastern grids were connected. Later in August 2006,
+the Central Grid was formed operating at one frequency. The Southern Grid was
+connected through the 765 kV Raichur–Solapur transmission line,
+establishing the National Grid.
+</p>
+</div>
+
+<div class="history-img">
+<img src="{{ url_for('static', filename='Images/History.png') }}">
+</div>
+
+</div>
+</section>
+
+<!-- ================= DASHBOARD ================= -->
+<section id="dashboard">
+<h2>Dashboard</h2>
+
+<div class="glass">
+
+<h3>Electricity Consumption Dashboard</h3>
+
+<div id='vizDashboard'></div>
+
+</div>
+</section>
+<!-- STORY -->
+
+<section id="story">
+<h2>Story</h2>
+<div class="glass">
+<div id='vizStory'></div>
+</div>
+</section>
+
+<!-- VISUALIZATION -->
+<section id="visualization">
+<h2>Visualizations</h2>
+
+<div class="visual-grid">
+<img src="{{ url_for('static', filename='Images/v1.png') }}">
+<img src="{{ url_for('static', filename='Images/v2.png') }}">
+<img src="{{ url_for('static', filename='Images/v3.png') }}">
+<img src="{{ url_for('static', filename='Images/v4.png') }}">
+<img src="{{ url_for('static', filename='Images/v5.png') }}">
+<img src="{{ url_for('static', filename='Images/v6.png') }}">
+</div>
+</section>
+
+<!-- CONCLUSION -->
+<!-- ================= CONCLUSION ================= -->
+<section id="conclusion">
+
+<h2 class="section-title">Conclusion</h2>
+
+<div class="conclusion-wrapper">
+
+<!-- ===== ROW 1 → IMAGE LEFT ===== -->
+<div class="conclusion-row">
+<div class="conclusion-img">
+<img src="{{ url_for('static', filename='Images/c1.png') }}" alt="Consumption Stats">
+</div>
+
+<div class="glass">
+<h3>Electricity Consumption Stats</h3>
+
+<div class="tick"><span>✓</span>Maharashtra highest consumption</div>
+<div class="tick"><span>✓</span>Gujarat second highest</div>
+<div class="tick"><span>✓</span>Sikkim lowest</div>
+
+</div>
+</div>
+
+<!-- ===== ROW 2 → IMAGE RIGHT ===== -->
+<div class="conclusion-row reverse">
+
+<div class="conclusion-img">
+<img src="{{ url_for('static', filename='Images/c2.png') }}" alt="Lockdown Consumption">
+</div>
+
+<div class="glass">
+<h3>Electricity Consumption Before & During Lockdown</h3>
+<br>
+<div class="tick"><span>✓</span>Electricity consumption was higher in 2019 (March–June).</div>
+<div class="tick"><span>✓</span>Electricity consumption reduced in 2020 during lockdown.</div>
+
+</div>
+</div>
+
+
+<!-- ===== ROW 3 → IMAGE LEFT ===== -->
+<div class="conclusion-row">
+<div class="conclusion-img">
+<img src="{{ url_for('static', filename='Images/c3.png') }}" alt="Quarter Consumption">
+</div>
+
+<div class="glass">
+<h3>Electricity Consumption in Quarters</h3>
+<div class="tick"><span>✓</span>2019 Quarter 3 was highest.</div>
+<div class="tick"><span>✓</span>2019 Quarter 1 was lowest.</div>
+<div class="tick"><span>✓</span>2020 Quarter 3 was lowest.</div>
+<div class="tick"><span>✓</span>2020 Quarter 1 was highest.</div>
+
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Electricity Consumption Analysis | All Rights Reserved</p>
+</footer>
+
+<!-- ===== SCRIPT ===== -->
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
